@@ -1,0 +1,380 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #f48fb1;
+    --primary-dark: #eb6f99;
+    --primary-light: #fce8f0;
+    --primary-50: #fef6f9;
+    --primary-100: #fce8f0;
+    --primary-200: #fad0e1;
+    --primary-300: #f5a8c9;
+    --primary-400: #f48fb1;
+    --primary-500: #eb6f99;
+    --primary-600: #df4f7d;
+    --primary-700: #ce3365;
+    --primary-800: #b32a56;
+    --primary-900: #8a2345;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  /* ==========================================
+     PRIMARY BUTTON - PINK THEME
+     ========================================== */
+  .btn-primary {
+    @apply bg-pink-400 hover:bg-pink-500 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  
+  /* ==========================================
+     SECONDARY BUTTON
+     ========================================== */
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  /* ==========================================
+     DANGER BUTTON
+     ========================================== */
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  /* ==========================================
+     CARDS
+     ========================================== */
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-6 border border-gray-100;
+  }
+  
+  /* ==========================================
+     INPUT FIELDS
+     ========================================== */
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:border-transparent outline-none transition-all duration-200;
+  }
+  
+  .label-field {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  /* ==========================================
+     BADGE - PINK
+     ========================================== */
+  .badge-pink {
+    @apply bg-pink-100 text-pink-800 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* ==========================================
+     SIDEBAR
+     ========================================== */
+  .sidebar-active {
+    @apply bg-pink-700 text-white;
+  }
+
+  .sidebar-hover {
+    @apply text-pink-200 hover:bg-pink-700 hover:text-white;
+  }
+
+  /* ==========================================
+     TABLE - PINK THEME
+     ========================================== */
+  .table-pink thead {
+    @apply bg-pink-50;
+  }
+
+  .table-pink thead th {
+    @apply text-pink-800 font-semibold;
+  }
+
+  .table-pink tbody tr:hover {
+    @apply bg-pink-50;
+  }
+
+  /* ==========================================
+     STATUS BADGES - PINK THEME
+     ========================================== */
+  .status-upcoming {
+    @apply bg-pink-100 text-pink-800;
+  }
+
+  .status-today {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .status-completed {
+    @apply bg-gray-100 text-gray-800;
+  }
+
+  .status-high-risk {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .status-normal {
+    @apply bg-green-100 text-green-800;
+  }
+
+  /* ==========================================
+     ANIMATIONS
+     ========================================== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes pulse-pink {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(244, 143, 177, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(244, 143, 177, 0); }
+  }
+
+  .animate-pulse-pink {
+    animation: pulse-pink 2s infinite;
+  }
+}
+
+/* ==========================================
+   REACHARTS - PINK THEME STYLES
+   ========================================== */
+
+/* Chart Tooltip */
+.recharts-tooltip-wrapper {
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 6px -1px rgba(244, 143, 177, 0.2), 0 2px 4px -1px rgba(244, 143, 177, 0.1) !important;
+}
+
+.recharts-default-tooltip {
+  background-color: white !important;
+  border: 1px solid #f48fb1 !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.recharts-tooltip-label {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.recharts-tooltip-item {
+  color: #f48fb1 !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+}
+
+.recharts-tooltip-item-list {
+  padding: 0 !important;
+}
+
+.recharts-tooltip-item-name {
+  color: #6b7280 !important;
+}
+
+.recharts-tooltip-item-value {
+  color: #f48fb1 !important;
+  font-weight: 700 !important;
+}
+
+/* Chart Legend */
+.recharts-legend-item-text {
+  color: #4b5563 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+}
+
+.recharts-legend-item:hover .recharts-legend-item-text {
+  color: #f48fb1 !important;
+  transition: color 0.2s ease;
+}
+
+.recharts-legend-item {
+  cursor: pointer !important;
+}
+
+/* Chart Axis Labels */
+.recharts-cartesian-axis-tick-value {
+  fill: #6b7280 !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: #e5e7eb !important;
+}
+
+/* Chart Grid */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #fce8f0 !important;
+  stroke-dasharray: 4 4 !important;
+}
+
+/* Bar Chart */
+.recharts-bar-rectangle {
+  transition: opacity 0.2s ease !important;
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.8 !important;
+}
+
+/* Pie Chart */
+.recharts-pie-sector {
+  transition: all 0.2s ease !important;
+}
+
+.recharts-pie-sector:hover {
+  opacity: 0.8 !important;
+  transform: scale(1.02) !important;
+}
+
+/* Chart Responsive */
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================
+   SCROLLBAR - PINK THEME
+   ========================================== */
+
+/* Webkit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fce8f0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f48fb1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eb6f99;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f48fb1 #fce8f0;
+}
+
+/* ==========================================
+   SELECTION COLOR - PINK THEME
+   ========================================== */
+::selection {
+  background: #f48fb1;
+  color: white;
+}
+
+::-moz-selection {
+  background: #f48fb1;
+  color: white;
+}
+
+/* ==========================================
+   FOCUS RING - PINK THEME
+   ========================================== */
+*:focus-visible {
+  outline: 2px solid #f48fb1;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   LOADER - PINK THEME
+   ========================================== */
+.loader-pink {
+  border: 3px solid #fce8f0;
+  border-top: 3px solid #f48fb1;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   SIDEBAR ACTIVE INDICATOR - PINK
+   ========================================== */
+.sidebar-active-indicator {
+  position: relative;
+}
+
+.sidebar-active-indicator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: #f48fb1;
+  border-radius: 0 4px 4px 0;
+}
+
+/* src/index.css - Add at the end */
+
+/* ==========================================
+   3D LOGO ANIMATIONS
+   ========================================== */
+
+.perspective-500 {
+  perspective: 500px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+}
