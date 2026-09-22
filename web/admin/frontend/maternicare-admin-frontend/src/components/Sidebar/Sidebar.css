@@ -1,0 +1,168 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  /* bg-pink-100 fallback with clean solid background */
+  background-color: #fce7f3; 
+  /* Fallback text token text-pink-900 */
+  color: #831843;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  /* border-pink-200 boundary styling */
+  border-right: 1px solid #fbcfe8;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fbcfe8;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  /* Utilizing a soft contrast tint from the system palette */
+  background: #fdf2f8;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #fbcfe8;
+}
+
+.heart-icon {
+  /* text-pink-600 for prominent accent icons */
+  color: #db2777;
+  width: 28px;
+  height: 28px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  /* text-pink-900 heading color */
+  color: #831843;
+}
+
+.toggle-btn {
+  /* Transparent neutral setup matching new system */
+  background: transparent;
+  border: 1px solid #fbcfe8;
+  color: #db2777;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #fbcfe8;
+  color: #831843;
+}
+
+.toggle-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  /* Default secondary label color: text-pink-800 */
+  color: #9d174d;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 8px;
+  border-radius: 12px;
+}
+
+.nav-item:hover {
+  /* bg-pink-200 for hover states */
+  background: #fbcfe8;
+  color: #831843;
+}
+
+.nav-item.active {
+  /* Solid container background swap using white container look or text-pink-900 contrast combo */
+  background: #fdf2f8;
+  color: #db2777;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.1);
+  border: 1px solid #fbcfe8;
+}
+
+.nav-item.active .nav-icon {
+  color: #db2777;
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #9d174d;
+  transition: color 0.3s ease;
+}
+
+.nav-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar.collapsed .nav-label {
+  display: none;
+}
+
+.sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding: 12px;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid #fbcfe8;
+}
+
+.clinic-version {
+  text-align: center;
+}
+
+.version-text {
+  font-size: 12px;
+  color: #9d174d;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.clinic-name {
+  font-size: 11px;
+  color: #db2777;
+}
+
+.sidebar.collapsed .clinic-version p {
+  display: none;
+}
